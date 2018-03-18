@@ -20,6 +20,8 @@ public class DaemonDontRunFinally {
         Thread t = new Thread(new ADaemon());
         t.setDaemon(true);
         t.start();
+//        大概是源于不同机器的JVM实现不同，我这边总是
+//         主线程线运行完成，后台进程没有打印文字
 //        TimeUnit.MILLISECONDS.sleep(100);
     }
 }

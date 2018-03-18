@@ -2,12 +2,23 @@ package com.priv.holding;
 
 import java.util.*;
 
-class Snow { }
-class Powder extends Snow { }
-class Light extends Powder { }
-class Heavy extends Powder { }
-class Crusty extends Snow { }
-class Slush extends Snow { }
+class Snow {
+}
+
+class Powder extends Snow {
+}
+
+class Light extends Powder {
+}
+
+class Heavy extends Powder {
+}
+
+class Crusty extends Snow {
+}
+
+class Slush extends Snow {
+}
 
 public class AsListInference {
     public static void main(String[] args0) {

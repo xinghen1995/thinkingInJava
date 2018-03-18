@@ -1,10 +1,12 @@
 package com.priv.typeinfo;
+
 import java.util.*;
 
 class Initable {
     static final int staticFinal = 47;
     static final int staticFinal2 =
             ClassInitialization.rand.nextInt(1000);
+
     static {
         System.out.println("Initializing Initable");
     }
@@ -12,6 +14,7 @@ class Initable {
 
 class Initable2 {
     static int staticNonFinal = 147;
+
     static {
         System.out.println("Initializing Initable2");
     }
@@ -19,6 +22,7 @@ class Initable2 {
 
 class Initable3 {
     static int statiNonFinal = 74;
+
     static {
         System.out.println("Initializing Initable3");
     }
@@ -26,6 +30,7 @@ class Initable3 {
 
 public class ClassInitialization {
     public static Random rand = new Random(47);
+
     public static void main(String[] args) throws Exception {
         Class initable = Initable.class;
         System.out.println("After creating Initable ref");
