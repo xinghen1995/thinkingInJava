@@ -20,4 +20,7 @@ public interface FilenameFilter {
 <li>FileChannel对象上调用tryLock()或lock()可以对文件加锁FileLock，其中tryLock()是非阻塞型，lock()会阻塞进程。</li>
 <li>Serializable是一个空接口，实现该接口后使用ObjectInputStream/ObjectOutputStream的readObject()/writeObject()可以直接实现对象的序列化。</li>
 <li>Serializable序列化的对象完全以文本中二进制进行恢复。但是Externalizable会在恢复是调用默认构造器，然后调用readExternal()。Externalizable控制序列化表现在，序列化时调用writeExternal()，解序列化时调用readExternal()。<li>
+<li>transent的字段并非不可恢复，而是要自己保存和恢复。</li>
+<li>控制的方式除了Extrenalizable之外，可以在Serializable中定义private readObject()/writeObject()。非transient的字段由defaultWriteObject()保存。</li>
+<li>Java知道同一流中序列化的对象是不是同一个，但如果序列化到不同的容器中，Java将不知道是不是同一个对象。</li>
 </ol>
