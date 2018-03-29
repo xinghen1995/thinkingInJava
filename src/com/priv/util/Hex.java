@@ -9,16 +9,17 @@ public class Hex {
             if(n % 16 == 0)
                 result.append(String.format("%05x: ", n));
             result.append(String.format("%02x ", b));
+            n++;
             if(n % 16 == 0)
                 result.append("\n");
         }
         result.append("\n");
         return result.toString();
     }
-    public static void main(String[] args) {
-//        if(args.length == 0)
-//            System.out.println(format(BinaryFile.read("")));
-//        else
-//            System.out.println(format(BinaryFile.read(new File(args[0]))));
+    public static void main(String[] args) throws Exception {
+        if(args.length == 0)
+            System.out.println(format(BinaryFile.read("src/com/priv/util/Hex.java")));
+        else
+            System.out.println(format(BinaryFile.read(new File(args[0]))));
     }
 }
