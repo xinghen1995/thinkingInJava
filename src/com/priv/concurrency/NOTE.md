@@ -1,0 +1,10 @@
+###Java线程笔记
+<ol>
+<li>Callable接口和Runnable接口:
+<ul><li>如果要求线程（任务）有返回值，应当使用Callable接口</li>
+<li>Callable接口使用call()函数返回返回值，而Runnable使用run()调用函数。</li>
+<li>使用ExecutorService.submit()执行call()函数。</li>
+<li>Callable是具有类型参数的接口，可以返回各种类型的返回值。</li>
+<li>submit()返回的是Future对象，使用get()获得返回值。</li></ul>
+</li>
+</ol>
