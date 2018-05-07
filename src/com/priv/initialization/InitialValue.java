@@ -1,5 +1,7 @@
 package com.priv.initialization;
-import static com.priv.util.Print.*;
+// Show default initial values.
+
+import static com.priv.util.Print.print;
 
 public class InitialValue {
     boolean t;
@@ -11,9 +13,10 @@ public class InitialValue {
     float f;
     double d;
     InitialValue reference;
+
     void printInitialValue() {
         print("Date Type        Initial value");
-        print("boolean          "  + t);
+        print("boolean          " + t);
         print("char             [" + c + "]");
         print("byte             " + b);
         print("short            " + s);
@@ -23,8 +26,13 @@ public class InitialValue {
         print("double           " + d);
         print("reference        " + reference);
     }
+
     public static void main(String[] args) {
         InitialValue iv = new InitialValue();
         iv.printInitialValue();
+        /**
+         * You can also say:
+         new InitialValue().printInitialValue();
+         */
     }
 }

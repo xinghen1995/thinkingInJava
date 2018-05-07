@@ -1,8 +1,12 @@
 package com.priv.initialization;
-/*显示初始化静态成员*/
+
+/**
+ * 显式初始化静态成员
+ */
 public class Spoon {
     static int i;
-    static {
+
+    static { // 静态初始化块
         i = 47;
     }
 }

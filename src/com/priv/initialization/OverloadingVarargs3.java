@@ -1,6 +1,6 @@
 package com.priv.initialization;
 
-public class OverloadingVarargs2 {
+public class OverloadingVarargs3 {
     static void f(float i, Character... args) {
         System.out.println("first");
     }

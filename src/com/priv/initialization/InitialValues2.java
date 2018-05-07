@@ -1,4 +1,5 @@
 package com.priv.initialization;
+// Providing explicit initial values.
 
 public class InitialValues2 {
     boolean bool = true;

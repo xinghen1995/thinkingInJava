@@ -5,5 +5,8 @@ public class Counter {
     * 即这里的i首先被置0
     * */
     int i;
-    Counter() { i = 7; }
+
+    Counter() {
+        i = 7;
+    }
 }

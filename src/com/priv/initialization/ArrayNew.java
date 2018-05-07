@@ -1,6 +1,10 @@
 package com.priv.initialization;
-import java.util.*;
-import static com.priv.util.Print.*;
+// Creating arrays with new.
+
+import java.util.Arrays;
+import java.util.Random;
+
+import static com.priv.util.Print.print;
 
 public class ArrayNew {
     public static void main(String[] args) {

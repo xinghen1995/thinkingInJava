@@ -2,6 +2,10 @@ package com.priv.control;
 
 import java.util.*;
 
+/**
+ * java在SE5之后引入了foreach语句
+ */
+
 public class ForEachFloat {
     public static void main(String[] args){
         Random rand = new Random(47);
