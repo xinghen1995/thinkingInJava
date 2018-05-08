@@ -1,60 +1,103 @@
 package com.priv.interfaces.music4;
+// Abstract classes and methods.
+
 import com.priv.polymorphism.music.Note;
-import static com.priv.util.Print.*;
+
+import static com.priv.util.Print.print;
 
 abstract class Instrument {
     private int i;
+
     public abstract void play(Note n);
-    public String whart() { return " Instrument"; }
+
+    public String what() {
+        return " Instrument";
+    }
+
     public abstract void adjust();
 }
 
 class Wind extends Instrument {
+
+    @Override
     public void play(Note n) {
         print("Wind.play() " + n);
     }
-    public String what() { return "Wind"; }
-    public void adjust() { }
+
+    @Override
+    public String what() {
+        return "Wind";
+    }
+
+    @Override
+    public void adjust() {
+    }
 }
 
 class Percussion extends Instrument {
+    @Override
     public void play(Note n) {
         print("Percussion.play() " + n);
     }
-    public String whart() { return "Percussion"; }
-    public void adjust() { }
+
+    @Override
+    public String what() {
+        return "Percussion";
+    }
+
+    @Override
+    public void adjust() {
+    }
 }
 
 class Stringed extends Instrument {
+    @Override
     public void play(Note n) {
         print("Stringed.play() " + n);
     }
-    public String what() { return "Stringed"; }
-    public void adjust() { }
+
+    @Override
+    public String what() {
+        return "Stringed";
+    }
+
+    @Override
+    public void adjust() {
+    }
 }
 
 class Brass extends Wind {
+    @Override
     public void play(Note n) {
         print("Brass.play() " + n);
     }
-    public void adjust() { }
+
+    @Override
+    public void adjust() {
+    }
 }
 
 class Woodwind extends Wind {
+    @Override
     public void play(Note n) {
         print("Woodwind.play() " + n);
     }
-    public void adjust() { }
+
+    @Override
+    public void adjust() {
+    }
 }
 
 public class Music4 {
     static void tune(Instrument i) {
         i.play(Note.MIDDLE_C);
     }
+
     static void tuneAll(Instrument[] e) {
-        for(Instrument i : e)
+        for (Instrument i : e)
             tune(i);
     }
+
     public static void main(String[] args) {
         Instrument[] orchestra = {
                 new Wind(),

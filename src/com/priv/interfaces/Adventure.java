@@ -1,4 +1,5 @@
 package com.priv.interfaces;
+// Multiple interfaces.
 
 interface CanFight {
     void fight();
@@ -13,28 +14,37 @@ interface CanFly {
 }
 
 class ActionCharacter {
-    public void fight() { }
+    public void fight() {
+    }
 }
 
 class Hero extends ActionCharacter
-    implements CanFight, CanSwim, CanFly {
-    public void swim() { }
-    public void fly() { }
+        implements CanFight, CanSwim, CanFly {
+    public void swim() {
+    }
+
+    public void fly() {
+    }
 }
 
 public class Adventure {
     public static void t(CanFight x) {
         x.fight();
     }
+
     public static void u(CanSwim x) {
         x.swim();
     }
+
     public static void v(CanFly x) {
         x.fly();
     }
+
     public static void w(ActionCharacter x) {
-        x.fight();;
+        x.fight();
+        ;
     }
+
     public static void main(String[] args) {
         Hero h = new Hero();
         t(h);

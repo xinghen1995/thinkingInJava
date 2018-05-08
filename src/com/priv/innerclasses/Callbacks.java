@@ -1,6 +1,7 @@
 package com.priv.innerclasses;
 // Using inner classes for callbacks
-import static com.priv.util.Print.*;
+
+import static com.priv.util.Print.print;
 
 interface Incrementable {
     void increment();
@@ -9,6 +10,7 @@ interface Incrementable {
 // Very simple to just implement the interface:
 class Callee1 implements Incrementable {
     private int i = 0;
+
     public void increment() {
         i++;
         print(i);
@@ -19,6 +21,7 @@ class MyIncrement {
     public void increment() {
         print("Other operation");
     }
+
     static void f(MyIncrement mi) {
         mi.increment();
     }
@@ -28,11 +31,13 @@ class MyIncrement {
 // other way, you must use an inner class;
 class Callee2 extends MyIncrement {
     private int i = 0;
+
     public void increment() {
         super.increment();
         i++;
         print(i);
     }
+
     private class Closure implements Incrementable {
         public void increment() {
             // Specify outer-class method, otherwise
@@ -40,6 +45,7 @@ class Callee2 extends MyIncrement {
             Callee2.this.increment();
         }
     }
+
     Incrementable getCallbackeReference() {
         return new Closure();
     }
@@ -47,9 +53,11 @@ class Callee2 extends MyIncrement {
 
 class Caller {
     private Incrementable callbackReference;
+
     Caller(Incrementable cbh) {
         callbackReference = cbh;
     }
+
     void go() {
         callbackReference.increment();
     }

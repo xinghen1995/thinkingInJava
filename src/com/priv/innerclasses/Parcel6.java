@@ -1,14 +1,20 @@
 package com.priv.innerclasses;
 // Nesting a class within a scope
 
+/**
+ * 在作用域内定义类，该类的创建时无条件的，它已经被编译过了。
+ * 但在作用域之外，无法使用该类。
+ */
 public class Parcel6 {
     private void internalTracking(boolean b) {
-        if(b) {
+        if (b) {
             class TrackingSlip {
                 private String id;
+
                 TrackingSlip(String s) {
                     id = s;
                 }
+
                 String getSlip() {
                     return id;
                 }
@@ -19,9 +25,11 @@ public class Parcel6 {
         // Can't use it here! Out of scope
         //! TrackingSlip ts = new TrackingSlip("x");
     }
+
     public void track() {
         internalTracking(true);
     }
+
     public static void main(String[] args) {
         Parcel6 p = new Parcel6();
         p.track();

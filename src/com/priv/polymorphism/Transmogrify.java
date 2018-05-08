@@ -1,22 +1,35 @@
 package com.priv.polymorphism;
-import static com.priv.util.Print.*;
+// Dynamically changing the behavior of an object.
+
+import static com.priv.util.Print.print;
 
 class Actor {
-    public void act() { }
+    public void act() {
+    }
 }
 
 class HappyActor extends Actor {
-    public void act() { print("HappyActor"); }
+    public void act() {
+        print("HappyActor");
+    }
 }
 
 class SadActor extends Actor {
-    public void act() { print("SadActor"); }
+    public void act() {
+        print("SadActor");
+    }
 }
 
 class Stage {
     private Actor actor = new HappyActor();
-    public void change() { actor = new SadActor(); }
-    public void performPlay() { actor.act(); }
+
+    public void change() {
+        actor = new SadActor();
+    }
+
+    public void performPlay() {
+        actor.act();
+    }
 }
 
 public class Transmogrify {

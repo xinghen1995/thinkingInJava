@@ -3,9 +3,13 @@ package com.priv.innerclasses;
 // levels of the classes they are nested within
 
 class MNA {
-    private void f() { }
+    private void f() {
+    }
+
     class A {
-        private void g() { }
+        private void g() {
+        }
+
         public class B {
             void h() {
                 g();

@@ -1,22 +1,36 @@
 package com.priv.innerclasses;
 // Two ways that a class can implement multiple interfaces.
 
-interface A { }
+/**
+ * 实现多重继承的两种方式：
+ * 1.使用单一类
+ * 2.使用内部类
+ */
 
-interface B { }
+interface A {
+}
 
-class X implements A, B { }
+interface B {
+}
+
+class X implements A, B {
+}
 
 class Y implements A {
     B makeB() {
         // Anonymous inner class:
-        return new B() { };
+        return new B() {
+        };
     }
 }
 
 public class MultiInterfaces {
-    static void takeA(A a) { }
-    static void takeB(B b) { }
+    static void takeA(A a) {
+    }
+
+    static void takeB(B b) {
+    }
+
     public static void main(String[] args) {
         X x = new X();
         Y y = new Y();

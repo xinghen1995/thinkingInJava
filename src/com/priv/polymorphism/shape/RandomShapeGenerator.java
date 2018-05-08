@@ -1,6 +1,7 @@
 package com.priv.polymorphism.shape;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.Random;
 
 public class RandomShapeGenerator implements Iterable<Shape> {
     private int num = 0;

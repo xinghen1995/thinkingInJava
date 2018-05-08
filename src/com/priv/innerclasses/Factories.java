@@ -1,8 +1,10 @@
 package com.priv.innerclasses;
-import static com.priv.util.Print.*;
+
+import static com.priv.util.Print.print;
 
 interface Service {
     void method1();
+
     void method2();
 }
 
@@ -11,13 +13,17 @@ interface ServiceFactory {
 }
 
 class Implementation1 implements Service {
-    private Implementation1() { }
+    private Implementation1() {
+    }
+
     public void method1() {
         print("Implementation1.method1()");
     }
+
     public void method2() {
         print("Implementation1.method2()");
     }
+
     public static ServiceFactory factory =
             new ServiceFactory() {
                 @Override
@@ -28,13 +34,17 @@ class Implementation1 implements Service {
 }
 
 class Implementation2 implements Service {
-    private Implementation2() { }
+    private Implementation2() {
+    }
+
     public void method1() {
         print("Implementation2.method1()");
     }
+
     public void method2() {
         print("Implementation2.method2()");
     }
+
     public static ServiceFactory factory =
             new ServiceFactory() {
                 @Override
@@ -50,6 +60,7 @@ public class Factories {
         s.method1();
         s.method2();
     }
+
     public static void main(String[] args) {
         serviceConsumer(Implementation1.factory);
         // Implementations are completely interchangeable

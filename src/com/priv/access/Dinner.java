@@ -1,5 +1,6 @@
 package com.priv.access;
-import com.priv.access.dessert.*;
+
+import com.priv.access.dessert.Cookie;
 
 public class Dinner {
     public static void main(String[] args) {

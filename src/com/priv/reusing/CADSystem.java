@@ -1,65 +1,82 @@
 package com.priv.reusing;
-import static com.priv.util.Print.*;
+// Ensuring proper cleanup
+import static com.priv.util.Print.print;
 
 class Shape {
-    Shape(int i) { print("Shape constructor");}
-    void dispose() { print("Shape dispose"); }
+    Shape(int i) {
+        print("Shape constructor");
+    }
+
+    void dispose() {
+        print("Shape dispose");
+    }
 }
+
 class Circle extends Shape {
     Circle(int i) {
         super(i);
         print("Drawing Circle");
     }
+
     void dispose() {
         print("Erasing Circle");
         super.dispose();
     }
 }
+
 class Triangle extends Shape {
     Triangle(int i) {
         super(i);
         print("Drawing Triangle");
     }
-    void dispose(){
+
+    void dispose() {
         print("Erasing Triangle");
         super.dispose();
     }
 }
+
 class Line extends Shape {
     private int start, end;
+
     Line(int start, int end) {
         super(start);
         this.start = start;
         this.end = end;
         print("Drawing Line: " + start + ", " + end);
     }
+
     void dispose() {
         print("Erasing Line: " + start + ", " + end);
         super.dispose();
     }
 }
+
 public class CADSystem extends Shape {
     private Circle c;
     private Triangle t;
     private Line[] lines = new Line[3];
+
     CADSystem(int i) {
         super(i);
-        for(int j = 0; j < lines.length; j++)
-            lines[j] = new Line(j, j*j);
+        for (int j = 0; j < lines.length; j++)
+            lines[j] = new Line(j, j * j);
         c = new Circle(1);
         t = new Triangle(1);
         print("Combined constructor");
     }
+
     public void dispose() {
         print("CADSystem.dispose()");
         //销毁顺序和构建顺序相反
         t.dispose();
         c.dispose();
-        for(int i= lines.length; i >= 0; i--)
+        for (int i = lines.length; i >= 0; i--)
             lines[i].dispose();
         super.dispose();
     }
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         CADSystem x = new CADSystem(47);
         try {
 

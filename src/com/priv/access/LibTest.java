@@ -1,5 +1,8 @@
 package com.priv.access;
-import com.priv.simple.*;
+// Uses the library.
+
+import com.priv.simple.List;
+import com.priv.simple.Vector;
 
 public class LibTest {
     public static void main(String[] args) {

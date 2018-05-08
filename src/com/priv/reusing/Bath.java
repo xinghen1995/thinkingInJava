@@ -1,8 +1,6 @@
 package com.priv.reusing;
 
-import javax.swing.plaf.basic.BasicHTML;
-
-import static com.priv.util.Print.*;
+import static com.priv.util.Print.print;
 
 class Soap {
     private String s;

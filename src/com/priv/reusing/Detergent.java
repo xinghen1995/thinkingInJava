@@ -1,16 +1,35 @@
 package com.priv.reusing;
-import static com.priv.util.Print.*;
+
+import static com.priv.util.Print.print;
 
 class Cleanser {
     private String s = "Cleanser";
-    public void append(String a) { s += a; }
-    public void dilute() { append(" dilute()"); }
-    public void apply() { append(" apply()"); }
-    public void scrub() { append(" scrub()"); }
-    public String toString() { return s; }
+
+    public void append(String a) {
+        s += a;
+    }
+
+    public void dilute() {
+        append(" dilute()");
+    }
+
+    public void apply() {
+        append(" apply()");
+    }
+
+    public void scrub() {
+        append(" scrub()");
+    }
+
+    public String toString() {
+        return s;
+    }
+
     public static void main(String[] args) {
         Cleanser x = new Cleanser();
-        x.dilute(); x.apply(); x.scrub();
+        x.dilute();
+        x.apply();
+        x.scrub();
         print(x);
     }
 }
@@ -20,7 +39,11 @@ public class Detergent extends Cleanser {
         append(" Detergent.scrub()");
         super.scrub();
     }
-    public void foam() { append(" foam()");}
+
+    public void foam() {
+        append(" foam()");
+    }
+
     public static void main(String[] args) {
         Detergent x = new Detergent();
         x.dilute();

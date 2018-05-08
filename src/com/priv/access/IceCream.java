@@ -1,11 +1,14 @@
 package com.priv.access;
 
 class Sundae {
-    private Sundae() { }
+    private Sundae() {
+    }
+
     static Sundae makeASundae() {
         return new Sundae();
     }
 }
+
 public class IceCream {
     public static void main(String[] args) {
         //! Sundae x = new Sundae();

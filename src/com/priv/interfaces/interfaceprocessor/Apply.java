@@ -1,5 +1,6 @@
 package com.priv.interfaces.interfaceprocessor;
-import static com.priv.util.Print.*;
+
+import static com.priv.util.Print.print;
 
 public class Apply {
     public static void process(Processor p, Object s) {

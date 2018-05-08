@@ -1,5 +1,6 @@
 package com.priv.interfaces;
-import static com.priv.util.Print.*;
+
+import static com.priv.util.Print.print;
 
 public class TestRandVals {
     public static void main(String[] args) {

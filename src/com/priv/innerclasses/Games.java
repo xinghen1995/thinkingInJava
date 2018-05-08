@@ -1,6 +1,7 @@
 package com.priv.innerclasses;
 // Using anonymous inner classes with the Game framework
-import static com.priv.util.Print.*;
+
+import static com.priv.util.Print.print;
 
 interface Game {
     boolean move();
@@ -11,13 +12,17 @@ interface GameFactory {
 }
 
 class Checkers implements Game {
-    private Checkers() { }
+    private Checkers() {
+    }
+
     private int moves = 0;
     private static final int MOVES = 3;
+
     public boolean move() {
         print("Checkers move " + moves);
         return ++moves != MOVES;
     }
+
     public static GameFactory factory = new GameFactory() {
         @Override
         public Game getGame() {
@@ -27,13 +32,17 @@ class Checkers implements Game {
 }
 
 class Chess implements Game {
-    private Chess() { }
+    private Chess() {
+    }
+
     private int moves = 0;
     private static int MOVES = 4;
+
     public boolean move() {
         print("Chess move " + moves);
         return ++moves != MOVES;
     }
+
     public static GameFactory factory = new GameFactory() {
         @Override
         public Game getGame() {
@@ -45,9 +54,10 @@ class Chess implements Game {
 public class Games {
     public static void playGame(GameFactory factory) {
         Game s = factory.getGame();
-        while(s.move())
+        while (s.move())
             ;
     }
+
     public static void main(String[] args) {
         playGame(Checkers.factory);
         playGame(Chess.factory);

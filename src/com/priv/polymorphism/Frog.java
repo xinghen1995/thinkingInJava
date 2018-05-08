@@ -1,12 +1,20 @@
 package com.priv.polymorphism;
-import static com.priv.util.Print.*;
+// Cleanup and Inheritance.
+
+/**
+ * 清理方法调用顺序和初始化顺序相反
+ */
+
+import static com.priv.util.Print.print;
 
 class Characteristic {
     private String s;
+
     Characteristic(String s) {
         this.s = s;
         print("Creating Characteristic " + s);
     }
+
     protected void dispose() {
         print("disposing Characteristic " + s);
     }
@@ -14,10 +22,12 @@ class Characteristic {
 
 class Description {
     private String s;
+
     Description(String s) {
         this.s = s;
         print("Creating Description " + s);
     }
+
     protected void dispose() {
         print("disposing Description " + s);
     }
@@ -26,9 +36,11 @@ class Description {
 class LivingCreature {
     private Characteristic p = new Characteristic("is alive");
     private Description t = new Description("Basic Living Creature");
+
     LivingCreature() {
         print("LivingCreature()");
     }
+
     protected void dispose() {
         print("LivingCreature dispose");
         t.dispose();
@@ -39,9 +51,11 @@ class LivingCreature {
 class Animal extends LivingCreature {
     private Characteristic p = new Characteristic("has heart");
     private Description t = new Description("Animal not Vegetable");
+
     Animal() {
         print("Animal()");
     }
+
     protected void dispose() {
         print("Animal dispose");
         t.dispose();
@@ -52,9 +66,11 @@ class Animal extends LivingCreature {
 class Amphibian extends Animal {
     private Characteristic p = new Characteristic("can living in water");
     private Description t = new Description("Both water and land");
+
     Amphibian() {
         print("Amphibian()");
     }
+
     protected void dispose() {
         print("Amphibian dispose");
         t.dispose();
@@ -65,16 +81,19 @@ class Amphibian extends Animal {
 public class Frog extends Amphibian {
     private Characteristic p = new Characteristic("Croaks");
     private Description t = new Description("Eats Bugs");
+
     public Frog() {
         print("Frog");
     }
+
     protected void dispose() {
         print("Frog dispose");
         t.dispose();
         p.dispose();
     }
+
     public static void main(String[] args) {
-        Frog frog = new Frog() ;
+        Frog frog = new Frog();
         print("Bye!");
         frog.dispose();
     }

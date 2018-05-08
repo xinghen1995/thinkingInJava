@@ -1,5 +1,6 @@
 package com.priv.innerclasses;
-import com.priv.innerclasses.controller.*;
+
+import com.priv.innerclasses.controller.Event;
 
 public class GreenhouseController {
     public static void main(String[] args) {
@@ -14,7 +15,7 @@ public class GreenhouseController {
                 gc.new ThermostatDay(1400),
         };
         gc.addEvent(gc.new Restart(2000, eventList));
-        if(args.length == 1)
+        if (args.length == 1)
             gc.addEvent(
                     new GreenhouseControls.Terminate(
                             new Integer(args[0])

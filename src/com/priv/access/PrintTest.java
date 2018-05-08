@@ -1,5 +1,6 @@
 package com.priv.access;
-import static com.priv.util.Print.*;
+
+import static com.priv.util.Print.print;
 
 public class PrintTest {
     public static void main(String[] args) {

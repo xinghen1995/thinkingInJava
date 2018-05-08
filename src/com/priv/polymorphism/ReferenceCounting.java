@@ -1,35 +1,48 @@
 package com.priv.polymorphism;
-import static com.priv.util.Print.*;
+// Cleaning up shared member objects.
+
+import static com.priv.util.Print.print;
 
 class Shared {
     private int refcount = 0;
     private static long counter = 0;
     private final long id = counter++;
+
     public Shared() {
         print("Creating " + this);
     }
-    public void addRef() { refcount++; }
+
+    public void addRef() {
+        refcount++;
+    }
+
     protected void dispose() {
-        if(--refcount == 0) {
+        if (--refcount == 0) {
             print("Disposing " + this);
         }
     }
-    public String toString() { return "Shared " + id; }
+
+    public String toString() {
+        return "Shared " + id;
+    }
 }
 
 class Composing {
     private Shared shared;
     private static long counter = 0;
     private final long id = counter++;
+
     public Composing(Shared shared) {
         print("Creating " + this);
         this.shared = shared;
         this.shared.addRef();
     }
+
     protected void dispose() {
         print("Disposing " + this);
         shared.dispose();
     }
+
     public String toString() {
         return "Composing " + id;
     }
@@ -46,7 +59,7 @@ public class ReferenceCounting {
                 new Composing(shared),
                 new Composing(shared),
         };
-        for(Composing c : composing)
+        for (Composing c : composing)
             c.dispose();
     }
 }

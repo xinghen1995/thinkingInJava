@@ -1,4 +1,6 @@
 package com.priv.interfaces;
+// Initializing interface fields with
+// non-constant initializer.
 
 import java.util.Random;
 

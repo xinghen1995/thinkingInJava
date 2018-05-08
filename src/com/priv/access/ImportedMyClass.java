@@ -1,4 +1,5 @@
 package com.priv.access;
+
 import com.priv.access.mypackage.MyClass;
 
 public class ImportedMyClass {
