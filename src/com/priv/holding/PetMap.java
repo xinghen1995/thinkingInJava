@@ -1,10 +1,14 @@
 package com.priv.holding;
 
-import com.priv.typeinfo.pets.*;
+import com.priv.typeinfo.pets.Cat;
+import com.priv.typeinfo.pets.Dog;
+import com.priv.typeinfo.pets.Hamster;
+import com.priv.typeinfo.pets.Pet;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
-import static com.priv.util.Print.*;
+import static com.priv.util.Print.print;
 
 public class PetMap {
     public static void main(String[] args) {

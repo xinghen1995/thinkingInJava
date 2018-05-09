@@ -1,5 +1,9 @@
 package com.priv.holding;
-import java.util.*;
+// Simple demonstration of HashMap:
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
 
 public class Statistics {
     public static void main(String[] args) {

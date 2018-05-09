@@ -1,6 +1,9 @@
 package com.priv.holding;
+// Containers print themselves automatically
+
 import java.util.*;
-import static com.priv.util.Print.*;
+
+import static com.priv.util.Print.print;
 
 public class PrintingContainer {
     static Collection fill(Collection<String> collection) {
@@ -10,6 +13,7 @@ public class PrintingContainer {
         collection.add("dog");
         return collection;
     }
+
     static Map fill(Map<String, String> map) {
         map.put("rat", "Fuzzy");
         map.put("cat", "Rags");
@@ -17,6 +21,7 @@ public class PrintingContainer {
         map.put("dog", "Spot");
         return map;
     }
+
     public static void main(String[] args) {
         print(fill(new ArrayList<String>()));
         print(fill(new LinkedList<String>()));

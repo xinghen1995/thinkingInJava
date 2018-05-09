@@ -10,6 +10,8 @@ public class Stack<T> {
         storage.addFirst(v);
     }
 
+    // 这里使用的方法在storage为空时，都会抛出NoSuchElementException.
+
     public T peek() {
         return storage.getFirst();
     }

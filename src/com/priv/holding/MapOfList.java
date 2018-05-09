@@ -1,11 +1,18 @@
 package com.priv.holding;
+
 import com.priv.typeinfo.pets.*;
-import java.util.*;
-import static com.priv.util.Print.*;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static com.priv.util.Print.print;
 
 public class MapOfList {
     public static Map<Person, List<? extends Pet>>
-        petPeople = new HashMap<Person, List<? extends Pet>>();
+            petPeople = new HashMap<Person, List<? extends Pet>>();
+
     static {
         petPeople.put(new Person("Dawn"),
                 Arrays.asList(new Cymric("Molly"), new Mutt("Spot")));
@@ -23,12 +30,13 @@ public class MapOfList {
         petPeople.put(new Person("Isaac"),
                 Arrays.asList(new Rat("Freckly")));
     }
+
     public static void main(String[] args) {
         print("People: " + petPeople.keySet());
         print("Pets: " + petPeople.values());
-        for(Person person : petPeople.keySet()) {
+        for (Person person : petPeople.keySet()) {
             print(person + " has:");
-            for(Pet pet : petPeople.get(person))
+            for (Pet pet : petPeople.get(person))
                 print("   " + pet);
         }
     }

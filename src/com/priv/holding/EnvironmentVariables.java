@@ -1,6 +1,6 @@
 package com.priv.holding;
 
-import java.util.*;
+import java.util.Map;
 
 public class EnvironmentVariables {
     public static void main(String[] args) {

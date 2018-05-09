@@ -4,7 +4,9 @@ package com.priv.holding;
  * 使用TreeSet比较好。而HashSet和LinkeHashSet底层采用散列函数
  */
 
-import java.util.*;
+import java.util.Random;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 public class SortedSetOfInteger {
     public static void main(String[] args) {

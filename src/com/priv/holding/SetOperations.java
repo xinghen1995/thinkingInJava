@@ -1,6 +1,10 @@
 package com.priv.holding;
-import java.util.*;
-import static com.priv.util.Print.*;
+
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+
+import static com.priv.util.Print.print;
 
 public class SetOperations {
     public static void main(String[] args) {
