@@ -2,9 +2,10 @@ package com.priv.typeinfo;
 
 import com.priv.typeinfo.pets.*;
 
-import java.util.*;
+import java.util.HashMap;
 
-import static com.priv.util.Print.*;
+import static com.priv.util.Print.print;
+import static com.priv.util.Print.printnb;
 
 public class PetCount {
     static class PetCounter extends HashMap<String, Integer> {

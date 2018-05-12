@@ -1,6 +1,6 @@
 package com.priv.strings;
 
-import java.util.*;
+import java.util.Formatter;
 
 public class Receipt {
     private double total = 0;

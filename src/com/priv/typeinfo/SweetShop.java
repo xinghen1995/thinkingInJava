@@ -1,5 +1,7 @@
 package com.priv.typeinfo;
-import static com.priv.util.Print.*;
+// Examination of the way the class loader works.
+
+import static com.priv.util.Print.print;
 
 class Candy {
     static {
@@ -35,10 +37,10 @@ public class SweetShop {
         print("After creating Cookie");
         print("Create through Command line");
 
-        if(args.length <= 0) return;
+        if (args.length <= 0) return;
         String str = "com.priv.typeinfo." + args[0];
         try {
-             Class.forName(str).newInstance();
+            Class.forName(str).newInstance();
         } catch (ClassNotFoundException e) {
             print("Couldn't find " + args[0]);
         } catch (IllegalAccessException e) {

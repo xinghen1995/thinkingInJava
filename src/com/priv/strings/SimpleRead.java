@@ -8,6 +8,7 @@ public class SimpleRead {
     public static BufferedReader input = new BufferedReader(
             new StringReader("Sir Robin of Camelot\n22 1.62803")
     );
+
     public static void main(String[] args) {
         try {
             System.out.println("What is your name?");

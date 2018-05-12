@@ -1,6 +1,10 @@
 package com.priv.typeinfo.pets;
+// Creates random sequence of Pets.
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
 
 public abstract class PetCreator {
     private Random rand = new Random(47);

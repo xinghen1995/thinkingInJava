@@ -22,6 +22,7 @@ public class Rethrowing {
         } catch (Exception e) {
             System.out.println("Inside h(),e.printStackTrace()");
             e.printStackTrace(System.out);
+            // 重新构建栈信息后，原有栈的信息丢失
             throw (Exception) e.fillInStackTrace();
         }
     }

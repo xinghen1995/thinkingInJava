@@ -1,6 +1,6 @@
 package com.priv.exceptions;
 
-import static com.priv.util.Print.*;
+import static com.priv.util.Print.print;
 
 public class Switch {
     private boolean state = false;

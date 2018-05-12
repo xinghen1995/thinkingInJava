@@ -1,8 +1,13 @@
 package com.priv.exceptions;
 
+/**
+ * e.printStackTrace()默认打印到System.err
+ */
+
 class MyException extends Exception {
     public MyException() {
     }
+
     public MyException(String msg) {
         super(msg);
     }
@@ -13,10 +18,12 @@ public class FullConstructors {
         System.out.println("Throwing MyException from f()");
         throw new MyException();
     }
+
     public static void g() throws MyException {
         System.out.println("Throwing MyException from g()");
         throw new MyException("Originated in g()");
     }
+
     public static void main(String[] args) {
         try {
             f();

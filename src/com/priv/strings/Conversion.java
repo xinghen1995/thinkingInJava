@@ -1,6 +1,6 @@
 package com.priv.strings;
-import java.util.*;
-import java.math.*;
+
+import java.util.Formatter;
 
 public class Conversion {
     public static void main(String[] args) {

@@ -27,7 +27,7 @@ public class ShowMethods {
             Constructor[] ctors = c.getConstructors();
             if (args.length == 1) {
                 for (Method method : methods)
-                    //去掉命名修饰词，即包名前缀com.priv.typeinfo.
+                    //鍘绘帀鍛藉悕淇グ璇嶏紝鍗冲寘鍚嶅墠缂�com.priv.typeinfo.
                     print(p.matcher(method.toString()).replaceAll(""));
                 for (Constructor ctor : ctors)
                     print(p.matcher(ctor.toString()).replaceAll(""));

@@ -1,4 +1,5 @@
 package com.priv.exceptions;
+// Ignoring RuntimeExceptions.
 
 /**
  * RuntimeException不受编译器检查，因为它属于编程错误。

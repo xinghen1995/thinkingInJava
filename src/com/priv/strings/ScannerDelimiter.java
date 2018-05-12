@@ -1,5 +1,10 @@
 package com.priv.strings;
 
+/**
+ * 默认Scanner使用空白字符对输入进行分词，
+ * 这里可以自定义分界符。
+ */
+
 import java.util.Scanner;
 
 public class ScannerDelimiter {

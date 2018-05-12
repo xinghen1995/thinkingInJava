@@ -1,4 +1,5 @@
 package com.priv.exceptions;
+// Throw a different object from the one that caught.
 
 class OneException extends Exception {
     public OneException(String s) {

@@ -1,5 +1,6 @@
 package com.priv.exceptions;
-import static com.priv.util.Print.*;
+
+import static com.priv.util.Print.print;
 
 class FourException extends Exception {
 }
@@ -14,7 +15,7 @@ public class AlwaysFinally {
             } finally {
                 print("finally in 2nd try block");
             }
-        } catch(FourException e){
+        } catch (FourException e) {
             System.out.println(
                     "Caught FourException in 1st try block"
             );

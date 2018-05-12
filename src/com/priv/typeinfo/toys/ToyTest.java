@@ -1,31 +1,47 @@
 package com.priv.typeinfo.toys;
 // Testing class Class.
+/**
+ * 传递给forName()的字符串中，必须使用全限定名(包含包名)
+ */
+
 import static com.priv.util.Print.print;
 
-interface HasBatteries { }
-interface Waterproof { }
-interface Shoots { }
+interface HasBatteries {
+}
 
-interface newInterface { }
+interface Waterproof {
+}
+
+interface Shoots {
+}
+
+interface newInterface {
+}
 
 class Toy {
-    Toy() { }
-    Toy(int i) { }
+    Toy() {
+    }
+
+    Toy(int i) {
+    }
 }
 
 class FancyToy extends Toy
-    implements HasBatteries, Waterproof, Shoots,
+        implements HasBatteries, Waterproof, Shoots,
         newInterface {
-    FancyToy() { super(1); }
+    FancyToy() {
+        super(1);
+    }
 }
 
 public class ToyTest {
     static void printInfo(Class cc) {
         print("Class name: " + cc.getName() +
-            " is interface? [" + cc.isInterface() + "]");
+                " is interface? [" + cc.isInterface() + "]");
         print("Simple name: " + cc.getSimpleName());
         print("Canonical name: " + cc.getCanonicalName());
     }
+
     public static void main(String[] args) {
         Class c = null;
         try {
@@ -35,7 +51,7 @@ public class ToyTest {
             System.exit(1);
         }
         printInfo(c);
-        for(Class face : c.getInterfaces())
+        for (Class face : c.getInterfaces())
             printInfo(face);
         Class up = c.getSuperclass();
         Object obj = null;
@@ -46,7 +62,7 @@ public class ToyTest {
         } catch (InstantiationException e) {
             print("Can't instantiate");
             System.exit(1);
-        } catch(IllegalAccessException e) {
+        } catch (IllegalAccessException e) {
             print("Cannot access");
             System.exit(1);
         }

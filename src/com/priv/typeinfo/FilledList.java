@@ -1,6 +1,7 @@
 package com.priv.typeinfo;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 class CountedInteger {
     private static long counter;

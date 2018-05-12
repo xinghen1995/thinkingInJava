@@ -1,6 +1,8 @@
 package com.priv.exceptions;
+// A Class that dynamically adds fields to itself.
+// Demonstrates exception chaining.
 
-import static com.priv.util.Print.*;
+import static com.priv.util.Print.print;
 
 class DynamicFieldsException extends Exception {
 }
@@ -88,7 +90,7 @@ public class DynamicFields {
         print(df);
         try {
             df.setField("d", "A value for d");
-            df.setField("numer", 47);
+            df.setField("number", 47);
             df.setField("number2", 48);
             print(df);
             df.setField("d", "A value for d");

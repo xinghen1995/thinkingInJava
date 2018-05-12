@@ -1,6 +1,7 @@
 package com.priv.exceptions;
+// Demonstrating the Exception Methods.
 
-import static com.priv.util.Print.*;
+import static com.priv.util.Print.print;
 
 public class ExceptionMethods {
     public static void main(String[] args) {

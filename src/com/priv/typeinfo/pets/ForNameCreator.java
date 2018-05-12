@@ -1,5 +1,7 @@
 package com.priv.typeinfo.pets;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ForNameCreator extends PetCreator {
     private static List<Class<? extends Pet>> types =
@@ -14,16 +16,23 @@ public class ForNameCreator extends PetCreator {
             "com.priv.typeinfo.pets.Mouse",
             "com.priv.typeinfo.pets.Hamster",
     };
+
     @SuppressWarnings("unchecked")
     private static void loader() {
         try {
-            for(String name : typeNames)
+            for (String name : typeNames)
                 types.add(
-                        (Class<? extends Pet>)Class.forName(name));
+                        (Class<? extends Pet>) Class.forName(name));
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }
-    static { loader(); }
-    public List<Class<? extends Pet>> types() { return types; }
+
+    static {
+        loader();
+    }
+
+    public List<Class<? extends Pet>> types() {
+        return types;
+    }
 }
