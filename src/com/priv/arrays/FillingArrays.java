@@ -32,6 +32,6 @@ public class FillingArrays {
         Arrays.fill(a8, 47);
         print("a8 = " + Arrays.toString(a8));
         Arrays.fill(a9, "hello");
-        print("a9 = " + Arrays.toString(a3));
+        print("a9 = " + Arrays.toString(a9));
     }
 }

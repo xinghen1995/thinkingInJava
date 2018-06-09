@@ -1,4 +1,5 @@
 package com.priv.generics;
+// A stack implemented with an internal linked structure.
 
 public class LinkedStack<T> {
     private static class Node<U> {
@@ -20,7 +21,7 @@ public class LinkedStack<T> {
         }
     }
 
-    private Node<T> top = new Node<T>();
+    private Node<T> top = new Node<T>(); // 哨兵，相当于C里的栈顶指针。
 
     public void push(T item) {
         top = new Node(item, top);

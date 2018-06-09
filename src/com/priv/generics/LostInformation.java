@@ -1,5 +1,9 @@
 package com.priv.generics;
 
+/**
+ * 在泛型代码内部，无法获得任何参数类型信息0
+ */
+
 import java.util.*;
 
 class Frob {

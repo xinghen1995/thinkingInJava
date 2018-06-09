@@ -1,4 +1,5 @@
 package com.priv.strings;
+// Allows you to easily try out regular expression.
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
