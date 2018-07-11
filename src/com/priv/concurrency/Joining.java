@@ -1,4 +1,5 @@
 package com.priv.concurrency;
+// Understanding join();
 
 import static com.priv.util.Print.print;
 
@@ -15,6 +16,7 @@ class Sleeper extends Thread {
         try {
             sleep(duration);
         } catch (InterruptedException e) {
+            // 这里isInterrupted()永远为false，因为异常捕获将导致异常标志位被清除
             print(getName() + " was interrupted. " +
                     "isInterrupted(): " + isInterrupted());
             return;

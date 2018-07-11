@@ -1,4 +1,5 @@
 package com.priv.concurrency;
+// Synchronizing on another object.
 
 import static com.priv.util.Print.print;
 

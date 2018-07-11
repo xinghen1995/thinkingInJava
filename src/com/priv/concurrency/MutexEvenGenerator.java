@@ -1,4 +1,5 @@
 package com.priv.concurrency;
+// Preventing thread collisions with mutexes.
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

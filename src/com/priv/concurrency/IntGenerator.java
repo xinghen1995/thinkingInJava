@@ -5,6 +5,7 @@ public abstract class IntGenerator {
 
     public abstract int next();
 
+    // Allow this to be canceled.
     public void cancel() {
         canceled = true;
     }

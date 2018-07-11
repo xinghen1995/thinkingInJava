@@ -1,10 +1,12 @@
 package com.priv.concurrency;
+// Locks in the concurrent library allow you
+// to give up on trying to acquire a lock.
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * ²»Çå³şÕâÀïÎªÊ²Ã´ºÍÔ¤ÆÚ½á¹û²»·ûºÏ
+ * ä¸æ¸…æ¥šè¿™é‡Œä¸ºä»€ä¹ˆå’Œé¢„æœŸç»“æœä¸ç¬¦åˆ
  */
 public class AttemptLocking {
     private ReentrantLock lock = new ReentrantLock();
@@ -46,11 +48,11 @@ public class AttemptLocking {
             }
 
             public void run() {
-                al.lock.lock(); //ÕâÀïÃ»ÓĞÊÍ·Å¸ÃÀàËø£¬ÎªÊ²Ã´ºóĞøÏß³Ì»¹ÊÇ³É¹¦ÁË£¿
+                al.lock.lock(); //è¿™é‡Œæ²¡æœ‰é‡Šæ”¾è¯¥ç±»é”ï¼Œä¸ºä»€ä¹ˆåç»­çº¿ç¨‹è¿˜æ˜¯æˆåŠŸäº†ï¼Ÿ
                 System.out.println("acquired");
             }
         }.start();
-        Thread.yield();//Õâ¸öËÆºõÊ§È¥ÁË×÷ÓÃ
+        Thread.yield();//è¿™ä¸ªä¼¼ä¹å¤±å»äº†ä½œç”¨
         al.untimed();
         al.timed();
     }

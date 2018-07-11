@@ -1,10 +1,11 @@
 package com.priv.concurrency;
+// When threads collide.
 
 public class EvenGenerator extends IntGenerator {
     private int currentEvenValue = 0;
 
     public int next() {
-        ++currentEvenValue;
+        ++currentEvenValue; // Danger point here!
         ++currentEvenValue;
         return currentEvenValue;
     }

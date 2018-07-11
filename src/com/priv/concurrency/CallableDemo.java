@@ -24,6 +24,7 @@ public class CallableDemo {
             results.add(exec.submit(new TaskWithResult(i)));
         for (Future<String> fs : results)
             try {
+                // get() blocks until completion:
                 System.out.println(fs.get());
             } catch (InterruptedException e) {
                 System.out.println(e);

@@ -1,4 +1,7 @@
 package com.priv.concurrency;
+// Synchronizing blocks instead of entire methods. Also
+// demonstrates protection of a non-thread-safe class
+// with a thread-safe one.
 
 import java.util.ArrayList;
 import java.util.Collections;

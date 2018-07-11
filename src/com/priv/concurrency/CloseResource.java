@@ -1,4 +1,8 @@
 package com.priv.concurrency;
+// Interrupting a blocked task by
+// closing the underlying resource.
+
+// 关闭任务上阻塞的底层资源
 
 import java.io.InputStream;
 import java.net.ServerSocket;
@@ -21,9 +25,9 @@ public class CloseResource {
         exec.shutdownNow();
         TimeUnit.SECONDS.sleep(1);
         print("Closing " + socketInput.getClass().getName());
-        socketInput.close();
+        socketInput.close(); // Releases blocked thread
         TimeUnit.SECONDS.sleep(1);
         print("Closing " + System.in.getClass().getName());
-        System.in.close();
+        System.in.close(); // Releases blocked thread
     }
 }

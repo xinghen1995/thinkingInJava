@@ -1,4 +1,5 @@
 package com.priv.concurrency;
+// Interrupting a blocked thread.
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,10 +11,10 @@ import java.util.concurrent.TimeUnit;
 import static com.priv.util.Print.print;
 
 /**
- * ¸Ã³ÌĞòÑİÊ¾ÁËÈıÖÖÀàĞÍµÄ×èÈû£¬sleep×èÈû£¬IO×èÈû£¬Í¬²½Ëø×èÈû¡£
- * Í¬Ê±´úÂëÑİÊ¾ÁËI/O×èÈûºÍÍ¬²½Ëø×èÈûÊÇ²»¿É´ò¶ÏµÄ×èÈû¡£
- * Í¬Ê±I/O×èÈûÔÚJava WebÖĞÊÇÒ»¸öÎÊÌâ£¬ÕâÒâÎ¶×ÅÄã²»ÄÜµÃµ½¶àÏß³ÌµÄÓÅÊÆ¡£
- * ºóĞø»áÌÖÂÛÔõÃ´ÓÅ»¯Ëü¡£
+ * è¯¥ç¨‹åºæ¼”ç¤ºäº†ä¸‰ç§ç±»å‹çš„é˜»å¡ï¼Œsleepé˜»å¡ï¼ŒIOé˜»å¡ï¼ŒåŒæ­¥é”é˜»å¡ã€‚
+ * åŒæ—¶ä»£ç æ¼”ç¤ºäº†I/Oé˜»å¡å’ŒåŒæ­¥é”é˜»å¡æ˜¯ä¸å¯æ‰“æ–­çš„é˜»å¡ã€‚
+ * åŒæ—¶I/Oé˜»å¡åœ¨Java Webä¸­æ˜¯ä¸€ä¸ªé—®é¢˜ï¼Œè¿™æ„å‘³ç€ä½ ä¸èƒ½å¾—åˆ°å¤šçº¿ç¨‹çš„ä¼˜åŠ¿ã€‚
+ * åç»­ä¼šè®¨è®ºæ€ä¹ˆä¼˜åŒ–å®ƒã€‚
  */
 
 class SleepBlocked implements Runnable {
@@ -51,14 +52,14 @@ class IOBlocked implements Runnable {
 
 class SynchronizedBlocked implements Runnable {
     public synchronized void f() {
-        while (true)
+        while (true) // Never releases lock
             Thread.yield();
     }
 
     public SynchronizedBlocked() {
         new Thread() {
             public void run() {
-                f();
+                f(); // Lock acquire by this thread
             }
         }.start();
     }
@@ -77,7 +78,7 @@ public class Interrupting {
         Future<?> f = exec.submit(r);
         TimeUnit.MILLISECONDS.sleep(100);
         print("Interrupting " + r.getClass().getName());
-        f.cancel(true);
+        f.cancel(true); // Interrupts if running
         print("Interrupt sent to " + r.getClass().getName());
     }
 
@@ -87,6 +88,6 @@ public class Interrupting {
         test(new SynchronizedBlocked());
         TimeUnit.SECONDS.sleep(3);
         print("Aborting with System.exit(0)");
-        System.exit(0);
+        System.exit(0); // ...since last 2 interrupts failed
     }
 }

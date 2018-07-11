@@ -1,4 +1,5 @@
 package com.priv.concurrency;
+// Automatically giving each thread its own storage.
 
 import java.util.Random;
 import java.util.concurrent.ExecutorService;

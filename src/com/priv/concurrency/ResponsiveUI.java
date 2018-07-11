@@ -1,4 +1,5 @@
 package com.priv.concurrency;
+// User interface responsiveness.
 
 class UnresponsiveUI {
     private volatile double d = 1;
